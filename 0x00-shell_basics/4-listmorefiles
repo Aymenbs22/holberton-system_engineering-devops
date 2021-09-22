@@ -1,2 +1,2 @@
 #!/bin/bashh
-ls -a
+ls -l -a
