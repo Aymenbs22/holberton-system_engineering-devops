@@ -1,4 +1,5 @@
 #!/usr/bin/env
+# This script is displaying "Best School" 10 times
 for ((count=10; count>0; count--))
 do
 echo -n "Best School "
