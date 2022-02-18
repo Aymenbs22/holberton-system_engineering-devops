@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#Bash script that displays lines containing the bash word
+#Bash script that displays To infinity and beyond indefinitely
 # shellcheck disable=SC2009
 while true
 do
