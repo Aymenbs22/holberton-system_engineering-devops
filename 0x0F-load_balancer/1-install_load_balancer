@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #bash script that Configure HAproxy so that it send traffic to web-01 and web-02
 sudo apt-get -y update
-sudo apt-get -y install nginx
+sudo apt-get -y install haproxy
 echo "frontend haproxy-main
 	bind *:80
         option forwardfor  
@@ -12,4 +12,3 @@ backend apache_webservers
 	server web-01   35.237.188.192:80 check
 	server web-02	34.139.154.71:80 check" >> /etc/haproxy/haproxy.cfg
 sudo systemctl restart haproxy
-sudo service nginx restart
