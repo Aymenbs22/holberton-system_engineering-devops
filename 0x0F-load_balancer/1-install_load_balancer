@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#bash script that Configure HAproxy so that it send traffic to web-01 and web-02
+echo "frontend haproxy-main
+	bind *:80
+        option forwardfor  
+	default_backend apache_webservers    
+
+backend apache_webservers
+	balance roundrobin
+	server websvr1	35.237.188.192:80 check
+	server websvr2	34.139.154.71:80 check" >> /etc/haproxy/haproxy.cfg
+sudo systemctl restart haproxy
