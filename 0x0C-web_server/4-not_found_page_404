@@ -3,4 +3,4 @@
 sudo apt-get update
 sudo apt-get -y install nginx
 echo "Ceci n'est pas une page" >> /etc/nginx/sites-available/default
-sudo /etc/init.d/nginx restart
+sudo /etc/init.d/nginx start
