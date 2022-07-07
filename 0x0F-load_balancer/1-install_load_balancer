@@ -7,6 +7,6 @@ echo "frontend haproxy-main
 
 backend apache_webservers
 	balance roundrobin
-	server websvr1	35.237.188.192:80 check
-	server websvr2	34.139.154.71:80 check" >> /etc/haproxy/haproxy.cfg
+	server web-01   35.237.188.192:80 check
+	server web-02	34.139.154.71:80 check" >> /etc/haproxy/haproxy.cfg
 sudo systemctl restart haproxy
