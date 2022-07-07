@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
+# Script That add header x server to ngiunx config
 sudo sed -i "17i\        add_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
 sudo /etc/init.d/nginx restart
