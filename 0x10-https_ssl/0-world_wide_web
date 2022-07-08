@@ -5,14 +5,14 @@
 #and write a Bash script that will display information about subdomains
 printsplited()
 {
-    awk '{split($1,arg,"."); print "The subdomain", arg[1], "is a", $4, "record and points to", $5}'
+    awk "{split($1,arg,"."); print "The subdomain", arg[1], "is a", $4, "record and points to", $5}"
 }
 
 if [ $# -eq 1 ]; then
-    dig "www.$1" | grep -A1 'ANSWER SECTION:' | grep -v  'ANSWER SECTION:' | printsplited
-    dig "lb-01.$1" | grep -A1 'ANSWER SECTION:' | grep -v  'ANSWER SECTION:' | printsplited
-    dig "web-01.$1" | grep -A1 'ANSWER SECTION:' | grep -v  'ANSWER SECTION:' | printsplited
-    dig "web-02.$1" | grep -A1 'ANSWER SECTION:' | grep -v  'ANSWER SECTION:' | printsplited
+    dig "www.$1" | grep -A1 "ANSWER SECTION:" | grep -v  "ANSWER SECTION:" | printsplited
+    dig "lb-01.$1" | grep -A1 "ANSWER SECTION:" | grep -v  "ANSWER SECTION:" | printsplited
+    dig "web-01.$1" | grep -A1 "ANSWER SECTION:" | grep -v  "ANSWER SECTION:" | printsplited
+    dig "web-02.$1" | grep -A1 "ANSWER SECTION:" | grep -v  "ANSWER SECTION:" | printsplited
 else
-    dig "$2.$1" | grep -A1 'ANSWER SECTION:' | grep -v  'ANSWER SECTION:' | printsplited
+    dig "$2.$1" | grep -A1 "ANSWER SECTION:" | grep -v  "ANSWER SECTION:" | printsplited
 fi
