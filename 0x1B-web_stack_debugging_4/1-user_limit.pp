@@ -7,6 +7,6 @@ exec { 'holberton-user-fix-limitt':
 
 #puppet script that change holberton user limit to 5000
 exec { 'holberton-user-fix-limitt':
-  command => 'sed -i "s/holberton/hard/nofile/50000" /etc/security/limits.conf',
+  command => 'sed -i "s/holberton/soft/nofile/50000" /etc/security/limits.conf',
   path    => '/usr/local/bin/:/bin/'
 }
